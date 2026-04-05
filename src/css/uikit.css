@@ -1,0 +1,114 @@
+.buttonRed {
+  border: none;
+  height: 46px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  border-radius: 100px;
+  padding: 10px 24px;
+  background: #6b0609;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+}
+
+.buttonWhite {
+  border: none;
+  height: 46px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  border-radius: 100px;
+  padding: 10px 24px;
+  background: rgba(8, 12, 9, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+}
+
+.buttonRed:hover,
+.buttonWhite:hover,
+.buttonWhite:focus-visible,
+.buttonRed:focus-visible {
+  opacity: 0.5;
+}
+.buttonRed:disabled,
+.buttonWhite:disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}
+.sliderArrows {
+  width: 48px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  background: #f2f2f2;
+  transition: all 0.25s ease;
+}
+.sliderArrows:hover,
+.sliderArrows:focus-visible {
+  opacity: 0.5;
+  background: #6b0609;
+}
+.sliderArrows:disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}
+.sliderArrows:active {
+  background: #6b0609;
+}
+
+.rating-rate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.rating-rate > i {
+  color: #080c09;
+}
+
+.rating-rate > i::before {
+  font-size: 16px;
+}
+
+.color-option {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.color-option input {
+  display: none;
+}
+
+.color-option__circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color);
+  display: block;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.color-option:hover .color-option__circle {
+  transform: scale(1.1);
+}
+
+.color-option input:checked + .color-option__circle {
+  border: 2px solid #000;
+  transform: scale(1.2);
+}
+.visibility-modal {
+  z-index: 1000;
+  display: flex !important;
+}
