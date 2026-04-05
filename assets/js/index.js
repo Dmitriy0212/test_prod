@@ -22,11 +22,11 @@ It can be › `+u);return}a||window.innerWidth<=p?f.position=="bottomLeft"||f.po
     <label class="furnitures-item__color ${n==="#FFFFFF"?"furnitures-item__color-swatch-white":""}">
       <input type="radio" class="furnitures-item__color-input" name="${t}" value="${n}"${s===0?" checked":""} />
       <span class="furnitures-item__color-swatch" style="background-color: ${n}"></span>
-    </label>`).join("")}async function Vt(e=1,t=st,n=null){ji(),Yn=n;const s=await ki(e,t,n);return Qe*st<s.total&&Wi(),s}le.furnitureList.addEventListener("click",async e=>{const t=e.target.closest(".furnitures-item__btn");if(!t)return;const n=t.closest(".furnitures-item");if(!n)return;const s=n.dataset.id;s&&await Wn(s)});le.loadMore.addEventListener("click",async()=>{try{Qe=Qe+1;const e=await Vt(Qe,st,Yn);if(e.furnitures.length){const t=Xt(e.furnitures);le.furnitureList.insertAdjacentHTML("beforeend",t)}}catch{}});function ji(){le.loadMore.style.display="none"}function Wi(){le.loadMore.style.display="block"}function Yi(e){return e.map(t=>Ui(t)).join("")}function Ui(e){return`
+    </label>`).join("")}async function Vt(e=1,t=st,n=null){ji(),Yn=n;const s=await ki(e,t,n);return Qe*st<s.total&&Wi(),s}le.furnitureList.addEventListener("click",async e=>{const t=e.target.closest(".furnitures-item__btn");if(!t)return;const n=t.closest(".furnitures-item");if(!n)return;const s=n.dataset.id;s&&await Wn(s)});le.loadMore.addEventListener("click",async()=>{try{Qe=Qe+1;const e=await Vt(Qe,st,Yn);if(e.furnitures.length){const t=Xt(e.furnitures);le.furnitureList.insertAdjacentHTML("beforeend",t)}}catch{}});function ji(){le.loadMore.style.display="none"}function Wi(){le.loadMore.style.display="block"}function Yi(e){return e.map(t=>Ui(t)).join("")}function Ui(e){const n=`/cheerful_monk/furniture-list-section/${e.image}`;return`
     <li 
       class="categories-item ${e.withAccent?"accent":""}"
       data-id="${e._id}"
-      style="background-image: url('/furniture-list-section/${e.image}');"
+      style="background-image: url('${n}');"
     >
       <h4 class="categories-item__title">${e.name}</h4>
     </li>
