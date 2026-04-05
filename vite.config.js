@@ -7,7 +7,7 @@ import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig(({ command }) => {
   const isServe = command === 'serve';
-  const basePath = isServe ? '/' : '/cheerful_monk/';
+  const basePath = isServe ? '/' : '/test_prod/';
 
   return {
     base: basePath,

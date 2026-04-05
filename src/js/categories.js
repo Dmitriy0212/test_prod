@@ -10,7 +10,7 @@ function renderCategories(categories) {
 function renderCategory(category) {
   const base = import.meta.env.BASE_URL;
   const imagePath = `${base}furniture-list-section/${category.image}`;
-
+  console.log(imagePath);
   return `
     <li 
       class="categories-item ${category.withAccent ? 'accent' : ''}"
