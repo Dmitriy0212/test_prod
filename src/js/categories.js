@@ -11,7 +11,7 @@ function renderCategory(category) {
     <li 
       class="categories-item ${category.withAccent ? 'accent' : ''}"
       data-id="${category._id}"
-      style="background-image: url('./cheerful_monk/furniture-list-section/${
+      style="background-image: url('./furniture-list-section/${
         category.image
       }');"
     >
