@@ -10,88 +10,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ідеальний дім</title>
     <script type="module" crossorigin src="/test_prod/assets/js/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/test_prod/assets/index-HP1CdPMs.css">
+    <link rel="stylesheet" crossorigin href="/test_prod/assets/index-CIobqDud.css">
   </head>
   <body>
-    <header class="header-section">
+    <header class="header">
   <div class="container">
-    <div class="header-container">
-      <!-- logo -->
-      <a class="logo-link" href="./index.html">
-        <svg class="logo-svg" width="100" height="72">
+    <div class="header-wrapper">
+      <a class="header-logo" href="./index.html">
+        <svg class="logo-svg" width="163" height="70">
           <use href="/test_prod/icon.svg#icon-company-logo"></use>
         </svg>
       </a>
-
-      <!-- nav desktop -->
-      <nav class="navigation-section">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a class="nav-link" href="#furniture-list">Наші меблі</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about-us">Про нас</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#questions">Часті питання</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#reviews">Відгуки</a>
+      <nav class="burger-menu-nav">
+        <ul class="burger-list-column">
+          <li><a class="header-link" href="#furniture-list">Наші меблі</a></li>
+          <li><a class="header-link" href="#about-us">Про нас</a></li>
+          <li><a class="header-link" href="#popular-products">Популярне</a></li>
+          <li><a class="header-link" href="#questions">Часті питання</a></li>
+          <li><a class="header-link" href="#reviews">Відгуки</a></li>
+          <li>
+            <a class="buttonRed header-to-seil" href="#furniture-list"
+              >До покупок</a
+            >
           </li>
         </ul>
       </nav>
-
-      <!-- anchor button desktop -->
-      <a href="#furniture-list" class="buy-button">До покупок</a>
-
-      <!-- burger -->
-      <button class="burger-btn" aria-label="Open menu">
+      <button class="header-burger-btn" type="button">
         <svg width="32" height="32">
           <use href="/test_prod/icon.svg#icon-menu"></use>
         </svg>
       </button>
-
-      <!-- close (tablet) -->
-      <button class="close-btn-header" aria-label="Close menu">
+      <button class="header-close-btn hidann-button" type="button">
         <svg width="32" height="32">
           <use href="/test_prod/icon.svg#icon-x"></use>
         </svg>
       </button>
     </div>
-
-    <!-- overlay -->
-    <div class="overlay"></div>
-
-    <!-- mobile / tablet menu -->
-    <div class="mobile-menu">
-      <!-- mobile header -->
-      <div class="mobile-menu-header">
-        <a class="logo-link-menu" href="./index.html">
-          <svg width="100" height="100">
-            <use href="/test_prod/icon.svg#icon-company-logo"></use>
-          </svg>
-        </a>
-
-        <button class="close-btn" aria-label="Close menu">
-          <svg width="32" height="32">
-            <use href="/test_prod/icon.svg#icon-x"></use>
-          </svg>
-        </button>
-      </div>
-
-      <!-- menu -->
-      <ul class="mobile-nav">
-        <li><a class="nav-link" href="#furniture-list">Наші меблі</a></li>
-        <li><a class="nav-link" href="#about-us">Про нас</a></li>
-        <li><a class="nav-link" href="#questions">Часті питання</a></li>
-        <li><a class="nav-link" href="#reviews">Відгуки</a></li>
-      </ul>
-
-      <!-- anchor button mobile -->
-      <a href="#furniture-list" class="buy-button-mobile-menu"> До покупок </a>
-    </div>
   </div>
 </header>
+<div class="nav-bar-mob">
+  <div class="container header-list-linc">
+    <nav class="header-menu-desktop">
+      <ul class="header-list-row">
+        <li>
+          <a class="header-link" href="#furniture-list">Наші меблі</a>
+        </li>
+        <li><a class="header-link" href="#about-us">Про нас</a></li>
+        <li><a class="header-link" href="#popular-products">Популярне</a></li>
+        <li><a class="header-link" href="#questions">Часті питання</a></li>
+        <li><a class="header-link" href="#reviews">Відгуки</a></li>
+        <li>
+          <a class="buttonRed header-button-buy" href="#furniture-list"
+            >До покупок</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="header-shadov"></div>
 
 
     <main>
@@ -120,6 +97,9 @@
     </h3>
     <ul class="categories-list"></ul>
     <ul class="furnitures-list"></ul>
+    <div class="loader">
+      <div id="furnitures-list-loader" class="slider__loader is-hidden"></div>
+    </div>
     <button class="load-more-btn buttonRed">Показати ще</button>
   </div>
 </section>
@@ -136,7 +116,7 @@
         інтер'єр починається з правильних меблів.
       </p>
     </div>
-    <picture>
+    <picture class="about-image-wrapper">
       <source
         media="(min-width: 1440px)"
         srcset="/test_prod/assets/a-behind-the-scenes-desk-CwvZx_AE.webp 1x, /test_prod/assets/a-behind-the-scenes-desk@2x-CsOqHO7E.webp 2x"
@@ -151,6 +131,7 @@
         srcset="/test_prod/assets/a-behind-the-scenes-mob-nZDhFZql.webp 1x, /test_prod/assets/a-behind-the-scenes-mob@2x-DzAXmxWr.webp 2x"
       />
       <img
+        class="about-image-wrapper"
         src="/test_prod/assets/a-behind-the-scenes-mob-nZDhFZql.webp"
         alt="Команда Меблерії"
       />
@@ -159,20 +140,20 @@
 </section>
 
 
-      <section id="popular-products" id="popular-products">
-  <div class="container popular-products">
+      <section id="popular-products" class="popular-products">
+  <div class="container popular-products-content">
     <h2 class="popular-products-title">Популярні товари</h2>
     <div class="slider swiper">
       <ul class="slider__wrapper swiper-wrapper" id="slider__wrapper"></ul>
       <div class="slider-nav-pag">
         <div class="swiper-pagination slider__pagination"></div>
         <div class="swiper-pagination-arrows">
-          <button class="sliderArrows slider__btn slider__btn--prev">
+          <button class="sliderArrows slider__btn pagination-slider__btn--prev">
             <svg viewBox="0 0 32 32" width="24" height="24">
               <use href="/test_prod/icon.svg#icon-left-arrow-alt"></use>
             </svg>
           </button>
-          <button class="sliderArrows slider__btn slider__btn--next">
+          <button class="sliderArrows slider__btn pagination-slider__btn--next">
             <svg viewBox="0 0 32 32" width="24" height="24">
               <use href="/test_prod/icon.svg#icon-right-arrow-alt"></use>
             </svg>
@@ -262,7 +243,36 @@
 </section>
 
 
-      
+      <section id="reviews" class="reviews">
+  <div class="container reviews-content">
+    <h2 class="reviews-title">Відгуки клієнтів</h2>
+    <h3 class="reviews-requests">
+      Дізнайтеся, що кажуть наші задоволені клієнти про нашу меблі.
+    </h3>
+    <div class="slider-reviews-cont swiper">
+      <ul
+        class="slider__wrapper-reviews swiper-wrapper"
+        id="slider__wrapper-reviews"
+      ></ul>
+      <div class="slider-nav-pag">
+        <div class="swiper-pagination slider__pagination"></div>
+        <div class="swiper-pagination-arrows">
+          <button class="sliderArrows slider__btn slider__btn--prev">
+            <svg viewBox="0 0 32 32" width="24" height="24">
+              <use href="/test_prod/icon.svg#icon-left-arrow-alt"></use>
+            </svg>
+          </button>
+          <button class="sliderArrows slider__btn slider__btn--next">
+            <svg viewBox="0 0 32 32" width="24" height="24">
+              <use href="/test_prod/icon.svg#icon-right-arrow-alt"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     </main>
 
     <footer class="footer">
@@ -361,24 +371,42 @@
   </div>
 </div>
 
-    
-<div id="orderModal" class="order-modal">
+    <div id="orderModal" class="order-modal">
   <div class="modal-content">
     <button class="order-close">
-        <svg width="22" height="22">
-            <use href="../img/order-modal/close.svg#icon-close"></use>
-        </svg>
+      <svg width="32" height="32">
+        <use href="/test_prod/icon.svg#icon-x"></use>
+      </svg>
     </button>
     <h2 class="order-title">Замовити</h2>
     <form id="orderForm" class="order-form">
       <label class="order-label" for="name">Ім'я</label>
-      <input class="order-input" type="text" id="name" name="name" placeholder="Дмитро" required>
+      <input
+        class="order-input"
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Дмитро"
+        required
+      />
 
       <label class="order-label" for="phone">Телефон</label>
-      <input class="order-input" type="tel" id="phone" name="phone" placeholder="38 099 123 22 11" required>
+      <input
+        class="order-input"
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="38 099 123 22 11"
+        required
+      />
 
       <label class="order-label" for="comment">Коментар</label>
-      <textarea class="order-textarea" id="comment" name="comment" placeholder="Введіть ваш коментар"></textarea>
+      <textarea
+        class="order-textarea"
+        id="comment"
+        name="comment"
+        placeholder="Введіть ваш коментар"
+      ></textarea>
 
       <button type="submit" class="order-btn">Надіслати заявку</button>
     </form>
