@@ -43,13 +43,17 @@ export async function productmodalRender(id) {
   mainImage.classList.add('main-image');
   galleryContainer.appendChild(mainImage);
 
+  let mainImageContent = document.createElement('div');
+  mainImageContent.classList.add('thumbs');
+  galleryContainer.appendChild(mainImageContent);
+
   let mainImg1 = document.createElement('img');
   mainImg1.src = slidesData.images[0];
   mainImage.appendChild(mainImg1);
 
   let thumb1 = document.createElement('div');
   thumb1.classList.add('thumb');
-  galleryContainer.appendChild(thumb1);
+  mainImageContent.appendChild(thumb1);
 
   let mainImg2 = document.createElement('img');
   mainImg2.src = slidesData.images[1];
@@ -57,7 +61,7 @@ export async function productmodalRender(id) {
 
   let thumb2 = document.createElement('div');
   thumb2.classList.add('thumb');
-  galleryContainer.appendChild(thumb2);
+  mainImageContent.appendChild(thumb2);
 
   let mainImg3 = document.createElement('img');
   mainImg3.src = slidesData.images[2];

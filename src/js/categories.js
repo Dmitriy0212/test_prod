@@ -1,7 +1,6 @@
 import refs from './refs.js';
 import { loadFurnitures, PER_PAGE, renderFurnitures } from './furnitures.js';
 import.meta.env.BASE_URL;
-
 function renderCategories(categories) {
   return categories.map(category => renderCategory(category)).join('');
 }
@@ -9,8 +8,7 @@ function renderCategories(categories) {
 // todo @2x.webp
 function renderCategory(category) {
   const base = import.meta.env.BASE_URL;
-  const imagePath = `${base}furniture-list-section/${category.image}`;
-  console.log(imagePath);
+  const imagePath = `${base}images/furniture-list-section/${category.image}`;
   return `
     <li 
       class="categories-item ${category.withAccent ? 'accent' : ''}"
@@ -21,6 +19,7 @@ function renderCategory(category) {
     </li>
   `;
 }
+
 function getImageById(id) {
   // ну це прікол якийсь, аххахахаха
   const arrImg = {

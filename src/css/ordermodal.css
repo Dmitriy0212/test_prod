@@ -1,29 +1,26 @@
 body.modal-open {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-
 .order-modal {
- display: none;
+  display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   position: fixed;
   inset: 0;
   z-index: 1000;
 }
 
-
-
 .modal-content {
   background: #fff;
   border-radius: 10px;
   width: 90%;
- max-height: 90vh;
- overflow-y: auto;
- padding: 64px 20px;
- position: absolute;
- top: 50%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 64px 20px;
+  position: absolute;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -37,15 +34,14 @@ body.modal-open {
   cursor: pointer;
 }
 
-.order-title{
-    font-size: 36px;
-    margin: 48px 0;
-    text-align: center;
+.order-title {
+  font-size: 36px;
+  margin-bottom: 48px;
+  text-align: center;
 }
 
-
 .order-label:has(+ .order-input:required)::after {
-  content: " *";
+  content: ' *';
   color: black;
 }
 
@@ -53,10 +49,10 @@ body.modal-open {
 .order-textarea {
   width: 100%;
   padding: 10px;
-  margin: 8px 0 24px ;
-  border: 1px solid rgba(8,12,9,0.15);
+  margin: 8px 0 24px;
+  border: 1px solid rgba(8, 12, 9, 0.15);
   border-radius: 12px;
-  background-color: rgba(8,12,9,0.05);
+  background-color: rgba(8, 12, 9, 0.05);
 }
 
 .order-textarea {
@@ -74,33 +70,31 @@ body.modal-open {
   width: 100%;
 }
 
-
-
+.visibility-modal {
+  z-index: 1000;
+  display: flex !important;
+}
 
 @media (min-width: 768px) {
-   
-    .order-btn {
-        width: 196px;
-        display: block;
-        margin: 0 auto 48px;
-    }
- 
+  .order-btn {
+    width: 196px;
+    display: block;
+    margin: 0 auto 48px;
+  }
 }
-
-
 
 @media (min-width: 1200px) {
-.modal-content{
+  .modal-content {
     width: 866px;
-}
+  }
 
-.order-form{
-padding: 0 32px;
-}
+  .order-form {
+    padding: 0 32px;
+  }
 
-.order-btn {
-width: 196px;
-display: block;
-margin: 0 auto;
-}
+  .order-btn {
+    width: 196px;
+    display: block;
+    margin: 0 auto;
+  }
 }
