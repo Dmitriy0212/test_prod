@@ -8,7 +8,7 @@ function renderCategories(categories) {
 // todo @2x.webp
 function renderCategory(category) {
   const base = import.meta.env.BASE_URL;
-  const imagePath = `${base}images/furniture-list-section/${category.image}`;
+  const imagePath = `${base}furniture-list-section/${category.image}`;
   return `
     <li 
       class="categories-item ${category.withAccent ? 'accent' : ''}"

@@ -1,6 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/keyboard';
 import { initRatings } from './starsrendering';
 import { getFeedbacksList } from './baseUrl';
 
@@ -21,18 +22,16 @@ export async function initFeedbacksSwiper() {
   if (!Array.isArray(slidesData)) slidesData = [];
 
   sliderWrapper.innerHTML = a(slidesData);
-  initRatings();
+  const ratingsBloc = document.querySelector('.slider__wrapper-reviews');
+  initRatings(ratingsBloc);
   const swiper = new Swiper('.slider-reviews-cont', {
     pagination: {
-      el: '.swiper-pagination',
+      el: '.slider-reviews-cont .swiper-pagination',
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 7,
     },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
-    },
+    keyboard: true,
     navigation: {
       nextEl: '.slider__btn--next',
       prevEl: '.slider__btn--prev',
@@ -61,13 +60,11 @@ function updateButtons(swiper) {
 function a(slidesData) {
   return slidesData
     .map(slide => {
-      return `
-            <li class="slider__slide swiper-slide">
-           <div class="rating-rate" data-rating="${slide.rate}"></div>          
-          <p class="slider__title">${slide.descr}</p>
-          <p class="slider__price">${slide.name}</p>
-          </div>
-          `;
+      return `<li class="slider__slide swiper-slide">
+  <div class="rating-rate" data-rating="${slide.rate}"></div>
+  <p class="slider__title">${slide.descr}</p>
+  <p class="slider__price">${slide.name}</p>
+</li>`;
     })
     .join('');
 }

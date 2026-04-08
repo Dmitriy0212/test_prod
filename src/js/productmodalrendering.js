@@ -91,8 +91,8 @@ export async function productmodalRender(id) {
   ratingContent.dataset.rating = slidesData.rate;
   ratingContent.classList.add('rating');
   infoContainer.appendChild(ratingContent);
-
-  initRatings();
+  const ratingsBloc = document.querySelector('.info');
+  initRatings(ratingsBloc);
   let colorsUlcontainer = document.createElement('div');
   colorsUlcontainer.classList.add('colors');
   infoContainer.appendChild(colorsUlcontainer);
@@ -110,6 +110,7 @@ export async function productmodalRender(id) {
     colorInput.type = 'radio';
     colorInput.name = 'color';
     colorInput.value = color;
+    colorInput.ariaLabel = `Колір ${color}`;
     colorLabel.appendChild(colorInput);
 
     let colorSpan = document.createElement('span');

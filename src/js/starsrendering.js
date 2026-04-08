@@ -1,8 +1,10 @@
 import 'raty-js/src/raty.css';
 import Raty from 'raty-js';
 
-export function initRatings() {
-  const ratings = document.querySelectorAll('.rating-rate');
+export function initRatings(container) {
+  if (!container) return;
+
+  const ratings = container.querySelectorAll('.rating-rate');
 
   ratings.forEach(el => {
     const score = el.dataset.rating;

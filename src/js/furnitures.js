@@ -34,7 +34,7 @@ function renderColors(furniture) {
     <label class="furnitures-item__color ${
       color === '#FFFFFF' ? 'furnitures-item__color-swatch-white' : ''
     }">
-      <input type="radio" class="furnitures-item__color-input" name="${groupName}" value="${color}"${
+      <input type="radio" class="furnitures-item__color-input" name="${groupName}" aria-label="Колір ${color}" value="${color}"${
         i === 0 ? ' checked' : ''
       } />
       <span class="furnitures-item__color-swatch" style="background-color: ${color}"></span>
@@ -45,14 +45,14 @@ function renderColors(furniture) {
 
 async function loadFurnitures(page = 1, limit = PER_PAGE, category = null) {
   hideLoadMore();
-  showLoader()
+  showLoader();
   categorySearch = category;
   const furnitureResponse = await getFurnituresList(page, limit, category);
   const hasMore = currentPage * PER_PAGE < furnitureResponse.total;
   if (hasMore) {
     showLoadMore();
   }
-  hideLoader()
+  hideLoader();
   return furnitureResponse;
 }
 
