@@ -1,79 +1,75 @@
-# Меблерія
+# React + TypeScript + Vite
 
-## About the Project
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Меблерія is a front-end web application for browsing furniture products.
-It helps users quickly discover items through categories, popular product
-highlights, and detailed product modals.
+Currently, two official plugins are available:
 
-The project solves a common catalog browsing task: presenting a large product
-list in a clean and interactive way with responsive UI components.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Technologies Used
+## React Compiler
 
-- HTML5
-- CSS3
-- JavaScript (ES Modules)
-- Vite
-- Axios
-- Swiper
-- Accordion.js
-- iziToast
-- modern-normalize
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-## Run and Deploy
+Note: This will impact Vite dev & build performances.
 
-### Local Development
+## Expanding the ESLint configuration
 
-1. Install [Node.js LTS](https://nodejs.org/en/).
-2. Install dependencies:
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-   ```bash
-   npm install
-   ```
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-3. Start development server:
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-   ```bash
-   npm run dev
-   ```
-
-4. Open the app in your browser at `http://localhost:5173`.
-
-### Production Build
-
-```bash
-npm run build
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-### Preview Production Build Locally
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```bash
-npm run preview
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-### Deploy to GitHub Pages
-
-1. In `package.json`, update the build script base path to your repository name:
-
-   ```json
-   "build": "vite build --base=/<REPO>/"
-   ```
-
-2. Replace `<REPO>` with your GitHub repository name.
-3. Push changes to `main`.
-4. Configure GitHub Pages in repository settings to serve from the `gh-pages`
-   branch (if not configured automatically).
-
-## Additional Project Information
-
-- Project type: team JavaScript project (`Group 8 - JS Project`).
-- Main scripts:
-  - `npm run dev` - development mode
-  - `npm run build` - production build
-  - `npm run preview` - local preview of production build
-- Source structure:
-  - `src/js` - application logic
-  - `src/css` - styling
-  - `src/partials` - reusable HTML sections
-  - `src/img` - static images
